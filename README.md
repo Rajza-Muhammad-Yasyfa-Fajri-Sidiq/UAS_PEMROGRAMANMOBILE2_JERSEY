@@ -80,6 +80,7 @@ git clone <repo_url>
 cd jerseyhub
 flutter pub get
 flutter run
+```
 
 Konfigurasi REST API (MockAPI)
 
@@ -116,21 +117,22 @@ imageUrl
 description
 
 Setup Firebase (Auth + Firestore)
-1) Buat Firebase Project
+
+1. Buat Firebase Project
 
 Buka Firebase Console → Create project
 
 Tambahkan aplikasi Android (dan iOS jika perlu)
 
-2) Aktifkan Authentication
+2. Aktifkan Authentication
 
 Authentication → Sign-in method → Email/Password → Enable
 
-3) Aktifkan Firestore
+3. Aktifkan Firestore
 
 Firestore Database → Create database
 
-4) Konfigurasi FlutterFire (disarankan)
+4. Konfigurasi FlutterFire (disarankan)
 
 Gunakan FlutterFire CLI agar file config otomatis:
 
@@ -146,7 +148,6 @@ android/app/google-services.json
 (iOS jika diperlukan) ios/Runner/GoogleService-Info.plist
 
 Catatan keamanan: file google-services.json bukan “secret key”, tapi tetap disarankan jangan menaruh kredensial sensitif lain di repo.
-
 
 Struktur Firestore (yang dipakai aplikasi)
 
@@ -166,72 +167,67 @@ orders/{orderId}
 
 uid, items[], total, status, createdAt
 
-
 Build APK (Android)
 flutter build apk --release
-
 
 Output:
 build/app/outputs/flutter-apk/app-release.apk
 
-
 Build Web (PWA) + Deploy Netlify
-1) Tambahkan redirect untuk routing (wajib untuk go_router)
+
+1. Tambahkan redirect untuk routing (wajib untuk go_router)
 
 Buat file:
-web/_redirects
+web/\_redirects
 
-/* /index.html 200
+/\* /index.html 200
 
-2) Build web
-flutter build web --release
-
+2. Build web
+   flutter build web --release
 
 Hasil build ada di:
 build/web
 
-3) Deploy ke Netlify
+3. Deploy ke Netlify
 
 Netlify → Add new site → Deploy manually / connect repo
 
 Publish directory: build/web
 
-
 Struktur Folder (ringkas)
 lib/
-  app/
-    router.dart
-    theme.dart
-  models/
-    jersey.dart
-  services/
-    api_service.dart
-    firestore_service.dart
-  state/
-    auth_controller.dart
-  ui/
-    scaffold_with_nav.dart
-    screens/
-      login_screen.dart
-      register_screen.dart
-      home_screen.dart
-      category_screen.dart
-      jersey_detail_screen.dart
-      favorites_screen.dart
-      cart_screen.dart
-      checkout_screen.dart
-      orders_screen.dart
-      about_screen.dart
-      info_screen.dart
+app/
+router.dart
+theme.dart
+models/
+jersey.dart
+services/
+api_service.dart
+firestore_service.dart
+state/
+auth_controller.dart
+ui/
+scaffold_with_nav.dart
+screens/
+login_screen.dart
+register_screen.dart
+home_screen.dart
+category_screen.dart
+jersey_detail_screen.dart
+favorites_screen.dart
+cart_screen.dart
+checkout_screen.dart
+orders_screen.dart
+about_screen.dart
+info_screen.dart
 
 Troubleshooting
 
-Blank screen di web saat refresh route → pastikan web/_redirects sudah ada.
+Blank screen di web saat refresh route → pastikan web/\_redirects sudah ada.
 
 Firebase error saat run → pastikan firebase_options.dart & google-services.json benar, lalu flutter clean + flutter pub get.
 
 Filter team tidak jalan → cek query parameter MockAPI atau lakukan filter di client.
-
 
 Author
 
@@ -242,4 +238,7 @@ Kelas: TIF RP-23 CNS A
 NPM : 23552011039
 
 Mata kuliah: Pemrograman Mobile II
+
+```
+
 ```
