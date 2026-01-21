@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "673077854432",
+    "project_id": "jerseey",
+    "storage_bucket": "jerseey.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673077854432:android:86888cf460adc8b2809085",
+        "android_client_info": {
+          "package_name": "com.example.jersey"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRA8wHGe9IwRP6kuoHaKM5C9zb16-CYEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
