@@ -169,6 +169,8 @@ Netlify → Add new site → Deploy manually / connect repo
 Publish directory: build/web
 
 Struktur Folder (ringkas)
+
+```bash
 lib/
 app/
 router.dart
@@ -194,6 +196,7 @@ checkout_screen.dart
 orders_screen.dart
 about_screen.dart
 info_screen.dart
+```
 
 Troubleshooting
 Blank screen di web saat refresh route → pastikan web/\_redirects sudah ada.
