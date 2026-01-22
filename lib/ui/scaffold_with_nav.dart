@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ScaffoldWithNav extends StatelessWidget {
   const ScaffoldWithNav({super.key, required this.child});
@@ -24,6 +25,33 @@ class ScaffoldWithNav extends StatelessWidget {
           IconButton(
             onPressed: () => context.push('/about'),
             icon: const Icon(Icons.info_outline),
+          ),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              final ok = await showDialog<bool>(
+                context: context,
+                builder: (ctx) => AlertDialog(
+                  title: const Text('Logout?'),
+                  content: const Text('Kamu yakin mau keluar dari akun?'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(ctx, false),
+                      child: const Text('Batal'),
+                    ),
+                    FilledButton(
+                      onPressed: () => Navigator.pop(ctx, true),
+                      child: const Text('Logout'),
+                    ),
+                  ],
+                ),
+              );
+
+              if (ok != true) return;
+
+              await FirebaseAuth.instance.signOut();
+              if (context.mounted) context.go('/login');
+            },
           ),
         ],
       ),
